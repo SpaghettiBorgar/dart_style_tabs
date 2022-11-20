@@ -1,3 +1,25 @@
+# Fork info
+This fork modifies the dart_style package to use tabs instead of spaces for indentation.
+The motivation for this came from [this awfully sad conversation](https://github.com/dart-lang/dart_style/issues/534) that I came across while trying to figure out why I can't customize the indentation for my project in vscode.
+
+Since it should be possible to decide for yourself whether you want to use nice single tab characters whose effective width can be configured on-demand in any IDE and are literally made for indentation or annoying messy little spaces, this simple patch does just that.
+
+## Configuration
+
+You can configure the indentation in the `Indent` class at lib/src/constants.dart .
+
+I might later add options to configure indentation options at runtime (probably not lol).
+
+## Compiling
+Simply run `dart compile exe bin/format.dart` to compile the executable at `bin/format.exe` 
+
+## Usage
+For tools that use `dart format` I made a little helper script (dart.sh) that overrides this function with the patched formatter, although there seem to be some differences in command-line arguments between this formatter and the one bundled in the dart-sdk so it might not work.
+
+If you want a simple way to use this formatter in vscode I found [this](https://marketplace.visualstudio.com/items?itemName=Vehmloewff.custom-format) extension that lets you register commands to use as custom formatters.
+
+# Original README
+
 The dart_style package defines an automatic, opinionated formatter for Dart
 code. It replaces the whitespace in your program with what it deems to be the
 best formatting for it. Resulting code should follow the [Dart style guide][]

@@ -2,6 +2,7 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 import 'chunk.dart';
+import 'constants.dart';
 import 'dart_formatter.dart';
 import 'debug.dart' as debug;
 import 'line_splitting/line_splitter.dart';
@@ -164,7 +165,7 @@ class LineWriter {
           if (chunk.isDouble) _buffer.write(_lineEnding);
         }
 
-        _buffer.write(' ' * (splits.getColumn(i)));
+        _buffer.write(Indent.indentCharacter * (splits.getColumn(i)));
       } else {
         if (chunk.spaceWhenUnsplit) _buffer.write(' ');
       }

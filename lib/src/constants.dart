@@ -56,15 +56,18 @@ class Cost {
 
 /// Constants for the number of spaces for various kinds of indentation.
 class Indent {
-  /// The number of spaces in a block or collection body.
-  static const block = 2;
+  /// The number of indents in a block or collection body.
+  static const block = 1;
 
   /// How much wrapped cascade sections indent.
-  static const cascade = 2;
+  static const cascade = 1;
 
-  /// The number of spaces in a single level of expression nesting.
-  static const expression = 4;
+  /// The number of indents in a single level of expression nesting.
+  static const expression = 1;
 
   /// The ":" on a wrapped constructor initialization list.
-  static const constructorInitializer = 4;
+  static const constructorInitializer = 1;
+
+  /// Character used for block indentation
+  static const indentCharacter = '\t';
 }
